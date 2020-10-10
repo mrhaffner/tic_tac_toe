@@ -32,13 +32,14 @@ const displayController = (() => {
                     //status, the players, and the turn, and gameBoard.board needs to be = [null, null, null, null, null, null, null, null, null];
             //gameStatus will refer to player1
 
+    const emptySquares = document.querySelectorAll('.square');
     const resetGame = () => {
-        if (!gameStatus === undefined) {
+        if (!(displayController.gameStatus === undefined)) {
             //log the results before switching the gamestatus
             gameBoard.board = [null, null, null, null, null, null, null, null, null];
             //maybe this should happen from within the gameboard object - addan event listener on on click, check the game status?
-            gameStatus = undefined;
-            turn = 'X';
+            displayController.gameStatus = undefined;
+            displayController.turn = 'X';
             //reset the playerNames
 
             //reset the square displays
@@ -51,60 +52,60 @@ const displayController = (() => {
     const gameState = () => {
         switch(true) {
             case gameBoard.board[0] === 'X' && gameBoard.board[1] === 'X' && gameBoard.board[2] === 'X':
-                gameStatus = 'Win';
+                displayController.gameStatus = 'Win';
                 break;
             case gameBoard.board[3] === 'X' && gameBoard.board[4] === 'X' && gameBoard.board[5] === 'X':
-                gameStatus = 'Win';
+                displayController.gameStatus = 'Win';
                 break;
             case gameBoard.board[6] === 'X' && gameBoard.board[7] === 'X' && gameBoard.board[8] === 'X':
-                gameStatus = 'Win';
+                displayController.gameStatus = 'Win';
                 break;
             case gameBoard.board[0] === 'X' && gameBoard.board[3] === 'X' && gameBoard.board[6] === 'X':
-                gameStatus = 'Win';
+                displayController.gameStatus = 'Win';
                 break;
             case gameBoard.board[1] === 'X' && gameBoard.board[4] === 'X' && gameBoard.board[7] === 'X':
-                gameStatus = 'Win';
+                displayController.gameStatus = 'Win';
                 break;
             case gameBoard.board[2] === 'X' && gameBoard.board[5] === 'X' && gameBoard.board[8] === 'X':
-                gameStatus = 'Win';
+                displayController.gameStatus = 'Win';
                 break;
             case gameBoard.board[0] === 'X' && gameBoard.board[4] === 'X' && gameBoard.board[8] === 'X':
-                gameStatus = 'Win';
+                displayController.gameStatus = 'Win';
                 break;
             case gameBoard.board[2] === 'X' && gameBoard.board[4] === 'X' && gameBoard.board[6] === 'X':
-                gameStatus = 'Win';
+                displayController.gameStatus = 'Win';
                 break;     
             case gameBoard.board[0] === 'O' && gameBoard.board[1] === 'O' && gameBoard.board[2] === 'O':
-                gameStatus = 'Lose';
+                displayController.gameStatus = 'Lose';
                 break;
             case gameBoard.board[3] === 'O' && gameBoard.board[4] === 'O' && gameBoard.board[5] === 'O':
-                gameStatus = 'Lose';
+                displayController.gameStatus = 'Lose';
                 break;
             case gameBoard.board[6] === 'O' && gameBoard.board[7] === 'O' && gameBoard.board[8] === 'O':
-                gameStatus = 'Lose';
+                displayController.gameStatus = 'Lose';
                 break;
             case gameBoard.board[0] === 'O' && gameBoard.board[3] === 'O' && gameBoard.board[6] === 'O':
-                gameStatus = 'Lose';
+                displayController.gameStatus = 'Lose';
                 break;
             case gameBoard.board[1] === 'O' && gameBoard.board[4] === 'O' && gameBoard.board[7] === 'O':
-                gameStatus = 'Lose';
+                displayController.gameStatus = 'Lose';
                 break;
             case gameBoard.board[2] === 'O' && gameBoard.board[5] === 'O' && gameBoard.board[8] === 'O':
-                gameStatus = 'Lose';
+                displayController.gameStatus = 'Lose';
                 break;
             case gameBoard.board[0] === 'O' && gameBoard.board[4] === 'O' && gameBoard.board[8] === 'O':
-                gameStatus = 'Lose';
+                displayController.gameStatus = 'Lose';
                 break;
             case gameBoard.board[2] === 'O' && gameBoard.board[4] === 'O' && gameBoard.board[6] === 'O':
-                gameStatus = 'Lose';
+                displayController.gameStatus = 'Lose';
                 break;
             case !gameBoard.board.includes(null):
-                gameStatus = 'Draw';
+                displayController.gameStatus = 'Draw';
                 break;                                                       
         };
     };
 
-    const emptySquares = document.querySelectorAll('.square');
+    
 
     emptySquares.forEach((square) => {
         square.addEventListener('click', () => {
