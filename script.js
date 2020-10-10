@@ -1,7 +1,7 @@
 //You’re going to store the gameboard as an array inside of a Gameboard object, so start there! 
 const gameBoard = (() => {
-
-    return {};
+    let board = [null, null, null, null, null, null, null, null, null];
+    return { board };
 })();
 
 //Your players are also going to be stored in objects
@@ -21,19 +21,42 @@ const Player = (name, playerNumber) => {
 //win/lose(3 x or 30 in a row
 //draw (is board full)
 const displayController = (() => {
-    let turn = 'x'
+    let turn = 'O'
     //when both players have a name, run the play? function
 
-    const emptySquare = document.getElementsByClassName('empty')
+    const emptySquares = document.querySelectorAll('.square');
     //add eventlistevent on click to all squares that are empty to add the x or o based on who's turn it is
         //update the gameboard Object/array, remove empty class, add full class
-        //if turn === x, turn = o else turn = x
+        //if turn === x, turn3 = o else turn = x
         //rerun function until win condition?
 
-        
-    //remove full class from all squares and add empty class at end of game
+    //or would it be easier to add event listener on click, check the status of the gameboard then update it with x or o, depending on the turn, or do nothing if the spot in gameboard is full?
+        //loop through gameBoard.board - 
+        //+x.dataset.type    will give data-type of of DOM element that correspnds to gameBoard.board's index number
 
-    return {};
+        emptySquares.forEach((square) => {
+            square.addEventListener('click', () => {
+                if (gameBoard.board[+square.dataset.type] === null) {
+                    square.textContent = turn
+                    gameBoard.board[+square.dataset.type] = turn
+                    if (turn === 'O') {
+                        turn = 'X'
+                    } else {
+                        turn = 'O'
+                    }
+                }
+                //console.log(+square.dataset.type)
+                //square.textContent = 'O'
+            })
+        })
+    const play = () => {
+        
+    }
+
+    //remove full class from all squares and add empty class at end of game
+    //or just reset all squares
+
+    return { emptySquares, turn };
 })();
 
 
