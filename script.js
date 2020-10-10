@@ -13,36 +13,22 @@ const Player = (name, playerNumber) => {
 };
 
 
-//win/lose(3 x or 30 in a row
+
 
 const displayController = (() => {
     let gameStatus;
     let turn = 'X';
     //when both players have a name, run the play? function
 
-    //checking for win/lose/draw
-    //should be done after each board update or will it just continuously run????
-        //set win condition logic
-            //??
-            //set each players status to win or lose
-            //make a switch for X and a switch for O
-            //8 ways to win
-            //put the switch in a function to run on whatever event
-                //function will reset the game if gameStatus is not undefined/null
-                    //status, the players, and the turn, and gameBoard.board needs to be = [null, null, null, null, null, null, null, null, null];
-            //gameStatus will refer to player1
 
     const emptySquares = document.querySelectorAll('.square');
     const resetGame = () => {
         if (!(displayController.gameStatus === undefined)) {
             //log the results before switching the gamestatus
             gameBoard.board = [null, null, null, null, null, null, null, null, null];
-            //maybe this should happen from within the gameboard object - addan event listener on on click, check the game status?
             displayController.gameStatus = undefined;
             displayController.turn = 'X';
             //reset the playerNames
-
-            //reset the square displays
             emptySquares.forEach((square) => {
                 square.textContent = ''
             })
@@ -117,23 +103,20 @@ const displayController = (() => {
                 } else {
                     displayController.turn = 'O'
                 }
-                //this shit isn't working
                 gameState();
+                //Move reset game to it's own button
+                //add logic for gamestate to display winner and not let there be any more moves until after reset
                 resetGame();
             };
         });
     });
-    //const play = () => {}
-
-
-    
-
     return { gameStatus, turn, resetGame };
 })();
 
 
-//Build the logic that checks for when the game is over! Should check for 3-in-a-row and a tie.
 
 
 //Clean up the interface to allow players to put in their names, 
 //include a button to start/restart the game and add a display element that congratulates the winning player!
+
+//make sure to alter what the object is returning to minimal upon final draft
