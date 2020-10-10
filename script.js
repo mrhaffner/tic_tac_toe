@@ -110,12 +110,12 @@ const displayController = (() => {
     emptySquares.forEach((square) => {
         square.addEventListener('click', () => {
             if (gameBoard.board[+square.dataset.type] === null) {
-                square.textContent = turn
-                gameBoard.board[+square.dataset.type] = turn
-                if (turn === 'O') {
-                    turn = 'X'
+                square.textContent = displayController.turn
+                gameBoard.board[+square.dataset.type] = displayController.turn
+                if (displayController.turn === 'O') {
+                    displayController.turn = 'X'
                 } else {
-                    turn = 'O'
+                    displayController.turn = 'O'
                 }
                 //this shit isn't working
                 gameState();
