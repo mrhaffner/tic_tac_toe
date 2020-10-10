@@ -1,4 +1,18 @@
 #grid {
     display: grid;
-    grid-template-columns: 1em 1em 1em;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 600px;
+    width: 600px;
+    margin: auto;
+    margin-top: 10%;
+    font-size: 100px;
+}
+
+.square {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
 }
