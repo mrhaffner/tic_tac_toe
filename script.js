@@ -16,7 +16,7 @@ const Player = (name, playerNumber) => {
 //win/lose(3 x or 30 in a row
 
 const displayController = (() => {
-    let status;
+    let gameStatus;
     let turn = 'X';
     //when both players have a name, run the play? function
 
@@ -42,17 +42,67 @@ const displayController = (() => {
             //set win condition logic
                 //??
                 //set each players status to win or lose
-                //reset the game
-            //loop through gameBoard.board, if (nothing = null && there is no winner) game status sets to draw
-                //reset the game
-                if (!gameBoard.board.includes(null)) {
-                    status = 'Draw';
-                };
+                //make a switch for X and a switch for O
+                //8 ways to win
+                //put the switch in a function to run on whatever event
+                    //function will reset the game if gameStatus is not undefined/null
+                        //status, the players, and the turn, and gameBoard.board needs to be = [null, null, null, null, null, null, null, null, null];
+                //gameStatus will refer to player1
+    switch(true) {
+        case gameBoard.board[0] === 'X' && gameBoard.board[1] === 'X' && gameBoard.board[2] === 'X':
+            gameStatus = 'Win';
+            break;
+        case gameBoard.board[3] === 'X' && gameBoard.board[4] === 'X' && gameBoard.board[5] === 'X':
+            gameStatus = 'Win';
+            break;
+        case gameBoard.board[6] === 'X' && gameBoard.board[7] === 'X' && gameBoard.board[8] === 'X':
+            gameStatus = 'Win';
+            break;
+        case gameBoard.board[0] === 'X' && gameBoard.board[3] === 'X' && gameBoard.board[6] === 'X':
+            gameStatus = 'Win';
+            break;
+        case gameBoard.board[1] === 'X' && gameBoard.board[4] === 'X' && gameBoard.board[7] === 'X':
+            gameStatus = 'Win';
+            break;
+        case gameBoard.board[2] === 'X' && gameBoard.board[5] === 'X' && gameBoard.board[8] === 'X':
+            gameStatus = 'Win';
+            break;
+        case gameBoard.board[0] === 'X' && gameBoard.board[4] === 'X' && gameBoard.board[8] === 'X':
+            gameStatus = 'Win';
+            break;
+        case gameBoard.board[2] === 'X' && gameBoard.board[4] === 'X' && gameBoard.board[6] === 'X':
+            gameStatus = 'Win';
+            break;     
+        case gameBoard.board[0] === 'O' && gameBoard.board[1] === 'O' && gameBoard.board[2] === 'O':
+            gameStatus = 'Lose';
+            break;
+        case gameBoard.board[3] === 'O' && gameBoard.board[4] === 'O' && gameBoard.board[5] === 'O':
+            gameStatus = 'Lose';
+            break;
+        case gameBoard.board[6] === 'O' && gameBoard.board[7] === 'O' && gameBoard.board[8] === 'O':
+            gameStatus = 'Lose';
+            break;
+        case gameBoard.board[0] === 'O' && gameBoard.board[3] === 'O' && gameBoard.board[6] === 'O':
+            gameStatus = 'Lose';
+            break;
+        case gameBoard.board[1] === 'O' && gameBoard.board[4] === 'O' && gameBoard.board[7] === 'O':
+            gameStatus = 'Lose';
+            break;
+        case gameBoard.board[2] === 'O' && gameBoard.board[5] === 'O' && gameBoard.board[8] === 'O':
+            gameStatus = 'Lose';
+            break;
+        case gameBoard.board[0] === 'O' && gameBoard.board[4] === 'O' && gameBoard.board[8] === 'O':
+            gameStatus = 'Lose';
+            break;
+        case gameBoard.board[2] === 'O' && gameBoard.board[4] === 'O' && gameBoard.board[6] === 'O':
+            gameStatus = 'Lose';
+            break;
+        case !gameBoard.board.includes(null):
+            gameStatus = 'Draw';
+            break;                                                       
+    }
 
-    //need to reset somewhere
-        //status, the players, and the turn, and gameBoard.board needs to be = [null, null, null, null, null, null, null, null, null];
-
-    return { };
+    return { gameStatus };
 })();
 
 
