@@ -20,18 +20,25 @@
     </div>
     <div id="button_container">
         <button id="reset">Reset</button>
+        <button id="new_players_button">New Players</button>
     </div>
-    <div id="results_container">
-        <p id="results"></p>
+    <div id="info_container">
+        <span>Player X:</span>
+        <span id="player1_name"></span><span id="results"></span><br>
+        <span>Player O:</span>
+        <span id="player2_name"></span><br>
+        
     </div>
     <div id="player_select_container">
-        <form action="">
-            <label for="player1">Player One</label><br>
-            <input type="text" id="player1" name="player1" autocomplete="off" required><br>
-            <label for="player2">Player Two</label><br>
-            <input type="text" id="player2" name="player2" autocomplete="off" required><br>
-            <input type="button" id="submit" value="Start Game">
-        </form>
+        <div id="select_center">
+            <form id="input_form" action="">
+                <label for="player1">Player One - X</label><br>
+                <input type="text" id="player1" name="player1" autocomplete="off" required><br>
+                <label for="player2">Player Two - O</label><br>
+                <input type="text" id="player2" name="player2" autocomplete="off" required><br>
+                <input type="button" id="submit" value="Start Game">
+            </form>
+        </div>
     </div>
     <script src='script.js'></script>
 </body>

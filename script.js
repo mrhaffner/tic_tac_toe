@@ -4,36 +4,44 @@ const gameBoard = (() => {
 })();
 
 
-//where to actually create the players? maybe inside one of the modules - displayController? or an anonymous function outside a module?
-//player1 is always X, player2 is always O
-const Player = (name, playerNumber) => {
+const Player = (name) => {
     const getName = () => name;
-    const getPlayerNumber = () => playerNumber;
-    return { getName, getPlayerNumber };
+    return { getName };
 };
 
 
 
 
 const displayController = (() => {
-    //need to do something with this, add a screem to enter the names, it goes away once names are entered and you can click on board
-        //the reset button will be a next game button
-        //there will be another button "new Players" that will reset and bring up the name entry screen
     let playerOne, playerTwo;
-    const submitBtn = document.getElementById('submit')
+    const playerSelectContainer = document.getElementById('player_select_container');
+    const pOneName = document.getElementById('player1_name');
+    const pTwoName = document.getElementById('player2_name');
+ 
+    const submitBtn = document.getElementById('submit');
     submitBtn.addEventListener('click', () => {
         const pOneInput = document.getElementById('player1').value;
         const pTwoInput = document.getElementById('player2').value;
-        playerOne = Player(pOneInput, 1)
-        playerTwo = Player(pTwoInput, 2)
-        console.log(playerOne.getName(), playerTwo.getName())
+        playerOne = Player(pOneInput)
+        playerTwo = Player(pTwoInput)
+        pOneName.textContent = playerOne.getName();
+        pTwoName.textContent = playerTwo.getName();
+        playerSelectContainer.style.display = "none"
     })
     
+
+    const openPlayerSelectBtn = document.getElementById('new_players_button');
+    openPlayerSelectBtn.addEventListener('click', () => {
+        resetGame()
+        playerSelectContainer.style.display = "block";
+        pOneName.textContent = "";
+        pTwoName.textContent = "";
+        document.getElementById('input_form').reset()
+    })
 
     
     let gameStatus;
     let turn = 'X';
-    //when both players have a name, run the play? function
 
 
     const emptySquares = document.querySelectorAll('.square');
@@ -41,7 +49,6 @@ const displayController = (() => {
         gameBoard.board = [null, null, null, null, null, null, null, null, null];
         displayController.gameStatus = undefined;
         displayController.turn = 'X';
-        //reset the playerNames
         emptySquares.forEach((square) => {
             square.textContent = '';
         })
@@ -131,15 +138,13 @@ const displayController = (() => {
             };
         });
     });
-    return { gameStatus, turn, resetGame };
+    return { gameStatus, turn };
 })();
 
 
 
 
-//Clean up the interface to allow players to put in their names, 
-//add a display element that congratulates the winning player!
-//make it so they cannot start game without selecting player names
-
 
 //make sure to alter what the object is returning to minimal upon final draft
+//make a win tally
+//update win display
