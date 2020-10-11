@@ -23,17 +23,18 @@ const displayController = (() => {
 
     const emptySquares = document.querySelectorAll('.square');
     const resetGame = () => {
-        if (!(displayController.gameStatus === undefined)) {
-            //log the results before switching the gamestatus
-            gameBoard.board = [null, null, null, null, null, null, null, null, null];
-            displayController.gameStatus = undefined;
-            displayController.turn = 'X';
-            //reset the playerNames
-            emptySquares.forEach((square) => {
-                square.textContent = ''
-            })
-        }
+        gameBoard.board = [null, null, null, null, null, null, null, null, null];
+        displayController.gameStatus = undefined;
+        displayController.turn = 'X';
+        //reset the playerNames
+        emptySquares.forEach((square) => {
+            square.textContent = '';
+        })
+        results.textContent = '';
     };
+
+    const resetButton = document.getElementById('reset');
+    resetButton.addEventListener ('click', () => resetGame());
 
     const gameState = () => {
         switch(true) {
@@ -91,7 +92,14 @@ const displayController = (() => {
         };
     };
 
-    
+    const results = document.getElementById('results');
+
+    const displayWinner = () => {
+        if (!(displayController.gameStatus === undefined)) {
+            gameBoard.board = ['no more moves until you reset'];
+            results.textContent = displayController.gameStatus;
+        }
+    }
 
     emptySquares.forEach((square) => {
         square.addEventListener('click', () => {
@@ -104,9 +112,7 @@ const displayController = (() => {
                     displayController.turn = 'O'
                 }
                 gameState();
-                //Move reset game to it's own button
-                //add logic for gamestate to display winner and not let there be any more moves until after reset
-                resetGame();
+                displayWinner();
             };
         });
     });
@@ -117,6 +123,6 @@ const displayController = (() => {
 
 
 //Clean up the interface to allow players to put in their names, 
-//include a button to start/restart the game and add a display element that congratulates the winning player!
+//add a display element that congratulates the winning player!
 
 //make sure to alter what the object is returning to minimal upon final draft
