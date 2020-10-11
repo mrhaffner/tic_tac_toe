@@ -16,6 +16,21 @@ const Player = (name, playerNumber) => {
 
 
 const displayController = (() => {
+    //need to do something with this, add a screem to enter the names, it goes away once names are entered and you can click on board
+        //the reset button will be a next game button
+        //there will be another button "new Players" that will reset and bring up the name entry screen
+    let playerOne, playerTwo;
+    const submitBtn = document.getElementById('submit')
+    submitBtn.addEventListener('click', () => {
+        const pOneInput = document.getElementById('player1').value;
+        const pTwoInput = document.getElementById('player2').value;
+        playerOne = Player(pOneInput, 1)
+        playerTwo = Player(pTwoInput, 2)
+        console.log(playerOne.getName(), playerTwo.getName())
+    })
+    
+
+    
     let gameStatus;
     let turn = 'X';
     //when both players have a name, run the play? function
@@ -124,5 +139,7 @@ const displayController = (() => {
 
 //Clean up the interface to allow players to put in their names, 
 //add a display element that congratulates the winning player!
+//make it so they cannot start game without selecting player names
+
 
 //make sure to alter what the object is returning to minimal upon final draft
