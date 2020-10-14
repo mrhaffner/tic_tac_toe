@@ -129,9 +129,11 @@ const displayController = (() => {
                 square.textContent = displayController.turn
                 gameBoard.board[+square.dataset.type] = displayController.turn
                 if (displayController.turn === 'O') {
-                    displayController.turn = 'X'
+                    displayController.turn = 'X';
+                    square.style.color = '#FF0099';
                 } else {
-                    displayController.turn = 'O'
+                    displayController.turn = 'O';
+                    square.style.color = '#FF6600';
                 }
                 gameState();
                 displayWinner();
