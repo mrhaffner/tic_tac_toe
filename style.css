@@ -1,11 +1,45 @@
+/*make the player select blink
+Align the select screen
+font for player select
+player select button
+input box style
+background image for select screen
+color for select font
+some sort of interactivity when you click buttons
+play with colors?
+Change fonts - perhaps the title will be in one of the more bold - cyberpunk like fonts
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* html, body {
     height: 100%;
     width: 100%;
 } */
 
+:root {
+    --x-color: #FF6600;
+    --o-color: #FF0099;
+    --grid-color: #33FF00;
+    --btn-color: #CC00FF;
+    --line-color: #33FF00;
+    --font: commando;
+}
+
 body {
     background-image: url('1.jpg');
     background-size: cover;
+    font-family: var(--font);
 }
 
 #container_container {
@@ -16,83 +50,192 @@ body {
 #container {
     display: grid;
     grid-template-columns: 1fr;
-    justify-content: center;
 }
+
+#submit {
+    font-family: var(--font);
+}
+
+
+
+
 
 #info_container_container {
+    /* display: flex;
+    justify-content: center; */
+    /* position: fixed;
+    top: 0%;
+    left: 40.8%; */
+    
+}
+
+#results_container {
+    /* position: fixed;
+    top: 16%;
+    left: 45%; */
+    color: var(--btn-color);
     display: flex;
     justify-content: center;
-    color: #FF6600;
+    margin: 4.5vh;
+    font-size: 3.5vh;
 }
 
-#player1 {
-    color: #FF6600;
+#results {
+    
 }
 
-#player2 {
-    color: #FF0099;
-}
+/* #grid_container {
+    display: flex;
+    justify-content: center;
+}; */
 
 #grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     height: 63vh;
     width: 63vh;
-    margin: 1vh;
-    /* margin: auto;
-    margin-top: 10%; */
-    font-size: 11vh;
-    /* position: absolute;
-    top: 20%;
-    left: 35%; */
+    margin: 2vh;
+    font-size: 15vh;
+    /* position: fixed;
+    top: 17%;
+    left: 30%; */
+}
+
+#button_container_container {
+    display: flex;
+    justify-content: center;
+    /* position: fixed;
+    top: 82%;
+    left: 34.8%; */
     
 }
 
+button {
+    font-family: var(--font);
+}
+
+
+
+
+
+
+
+
+#info_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#vl{
+    border-left: 6px solid var(--line-color);
+    height: 10vh;
+    margin: 3vh 0
+}
+
+#player1_name, #player2_name {
+    width: 100vh;
+    font-size: 4vh;;
+}
+
+#player1_name {
+    position: fixed;
+    top: 2%;
+    right: 40%;
+    color: var(--x-color);
+}
+
+#player2_name {
+    position: fixed;
+    top: 2%;
+    right: -33%;
+    color: var(--o-color);
+}
+
+#player1_div {
+    color: var(--x-color);
+}
+
+#player2_div {
+    color: var(--o-color);
+}
+
+
+
 .square {
-    border: .3vh solid #33FF00;
+    border: .5vh solid var(--grid-color);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 21vh;
     width: 21vh;
+    font-family: Varela;
 }
 
+.xo {
+    font-family: Varela;
+    font-size: 5vh;
+    margin: 5vh;
+}
+
+
+
+
 #square1 {
-    border-color: rgba(255, 0, 0, .0) #33FF00 #33FF00 rgba(255, 0, 0, .0);
+    border-color: rgba(255, 0, 0, .0) var(--grid-color) var(--grid-color) rgba(255, 0, 0, .0);
 }
 
 #square2 {
-    border-color: rgba(255, 0, 0, .0) #33FF00 #33FF00 #33FF00;
+    border-color: rgba(255, 0, 0, .0) var(--grid-color) var(--grid-color) var(--grid-color);
 }
 
 #square3 {
-    border-color: rgba(255, 0, 0, .0) rgba(255, 0, 0, .0) #33FF00 #33FF00;
+    border-color: rgba(255, 0, 0, .0) rgba(255, 0, 0, .0) var(--grid-color) var(--grid-color);
 }
 
 #square4 {
-    border-color: #33FF00 #33FF00 #33FF00 rgba(255, 0, 0, .0);
+    border-color: var(--grid-color) var(--grid-color) var(--grid-color) rgba(255, 0, 0, .0);
 }
 
 #square6 {
-    border-color: #33FF00 rgba(255, 0, 0, .0) #33FF00 #33FF00;
+    border-color: var(--grid-color) rgba(255, 0, 0, .0) var(--grid-color) var(--grid-color);
 }
 
 #square7 {
-    border-color: #33FF00 #33FF00 rgba(255, 0, 0, .0) rgba(255, 0, 0, .0);
+    border-color: var(--grid-color) var(--grid-color) rgba(255, 0, 0, .0) rgba(255, 0, 0, .0);
 }
 
 #square8 {
-    border-color: #33FF00 #33FF00 rgba(255, 0, 0, .0) #33FF00;
+    border-color: var(--grid-color) var(--grid-color) rgba(255, 0, 0, .0) var(--grid-color);
 }
 
 #square9 {
-    border-color: #33FF00 rgba(255, 0, 0, .0) rgba(255, 0, 0, .0) #33FF00;
+    border-color: var(--grid-color) rgba(255, 0, 0, .0) rgba(255, 0, 0, .0) var(--grid-color);
 }
 
 
-#button_container_container {
+
+
+#button_container {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+#button_container button {
+    border: 1vh solid var(--btn-color);
+    border-radius: 0;
+    height: 6vh;
+    width: 15vh;
+    background-color: rgba(255, 0, 0, .0);
+    font-size: 2vh;
+    color: var(--btn-color);
+    margin: 7vh 10vh 0 10vh;
+}
+
+#button_container button:focus {
+    border-radius: 0;
+    outline: none;
 }
 
 #player_select_container {
@@ -118,3 +261,32 @@ body {
 }
 
 /*synthwave styled*/
+@font-face {
+    font-family: Varela;
+    src: url(VarelaRound.ttf);
+}
+
+@font-face {
+    font-family: commando;
+    src: url(commando.ttf);
+}
+
+@font-face {
+    font-family: indelible;
+    src: url(Indelible.otf);
+}
+
+@font-face {
+    font-family: neon;
+    src: url(Neon.ttf);
+}
+
+@font-face {
+    font-family: road_rage;
+    src: url(Road_Rage.otf);
+}
+
+@font-face {
+    font-family: Varela;
+    src: url(VarelaRound.ttf);
+}

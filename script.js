@@ -52,7 +52,7 @@ const displayController = (() => {
         emptySquares.forEach((square) => {
             square.textContent = '';
         })
-        results.textContent = '';
+        results.textContent = 'Fight!';
     };
 
     const resetButton = document.getElementById('reset');
@@ -119,7 +119,9 @@ const displayController = (() => {
     const displayWinner = () => {
         if (!(displayController.gameStatus === undefined)) {
             gameBoard.board = ['no more moves until you reset'];
-            results.textContent = displayController.gameStatus;
+            if (displayController.gameStatus === 'Lose') {results.textContent = 'O Wins';}
+            else if (displayController.gameStatus === 'Win') {results.textContent = 'X Wins';}
+            else {results.textContent = 'Draw';}
         }
     }
 
