@@ -11,7 +11,7 @@
 #toggle {
     display: none;
     position: absolute;
-    background-image: url('5.jpg');
+    background-image: url('/styles/5.jpg');
     background-size: cover;
     width: 100%;
     height: 100%;
@@ -171,7 +171,7 @@ from {
 
 #player_select_container {
     position: absolute;
-    background-image: url('1.jpg');
+    background-image: url('/styles/1.jpg');
     background-size: cover;
     width: 100%;
     height: 100%;
@@ -274,20 +274,20 @@ from {
 
 @font-face {
     font-family: Varela;
-    src: url(VarelaRound.ttf);
+    src: url(/styles/VarelaRound.ttf);
 }
 
 @font-face {
     font-family: commando;
-    src: url(commando.ttf);
+    src: url(/styles/commando.ttf);
 }
 
 @font-face {
     font-family: neon;
-    src: url(Neon.ttf);
+    src: url(/styles/Neon.ttf);
 }
 
 @font-face {
     font-family: road_rage;
-    src: url(Road_Rage.otf);
+    src: url(/styles/Road_Rage.otf);
 }
