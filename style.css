@@ -274,7 +274,7 @@ from {
 
 @font-face {
     font-family: Varela;
-    src: url(/styles/VarelaRound.ttf);
+    src: url(/styles/varelaround.ttf);
 }
 
 @font-face {
@@ -284,10 +284,10 @@ from {
 
 @font-face {
     font-family: neon;
-    src: url(/styles/Neon.ttf);
+    src: url(/styles/neon.ttf);
 }
 
 @font-face {
     font-family: road_rage;
-    src: url(/styles/Road_Rage.otf);
+    src: url(/styles/road_rage.otf);
 }
