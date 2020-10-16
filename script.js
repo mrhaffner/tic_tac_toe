@@ -53,6 +53,14 @@ const displayController = (() => {
             square.textContent = '';
         })
         results.textContent = 'Fight!';
+        let p1 = document.getElementById('player1_name')
+        p1.style['-webkit-animation'] = 'glow 1s ease-in-out infinite alternate';
+        p1.style['-moz-animation'] = 'glow 1s ease-in-out infinite alternate';
+        p1.style.animation = 'glow 1s ease-in-out infinite alternate';
+        let p2 = document.getElementById('player2_name')
+        p2.style['-webkit-animation'] = 'none';
+        p2.style['-moz-animation'] = 'none';
+        p2.style.animation = 'none';
     };
 
     const resetButton = document.getElementById('reset');
@@ -133,9 +141,25 @@ const displayController = (() => {
                 if (displayController.turn === 'O') {
                     displayController.turn = 'X';
                     square.style.color = '#FF0099';
+                    let p1 = document.getElementById('player1_name')
+                    p1.style['-webkit-animation'] = 'glow 1s ease-in-out infinite alternate';
+                    p1.style['-moz-animation'] = 'glow 1s ease-in-out infinite alternate';
+                    p1.style.animation = 'glow 1s ease-in-out infinite alternate';
+                    let p2 = document.getElementById('player2_name')
+                    p2.style['-webkit-animation'] = 'none';
+                    p2.style['-moz-animation'] = 'none';
+                    p2.style.animation = 'none';
                 } else {
                     displayController.turn = 'O';
                     square.style.color = '#FF6600';
+                    let p1 = document.getElementById('player1_name')
+                    p1.style['-webkit-animation'] = 'none';
+                    p1.style['-moz-animation'] = 'none';
+                    p1.style.animation = 'none';
+                    let p2 = document.getElementById('player2_name')
+                    p2.style['-webkit-animation'] = 'glow1 1s ease-in-out infinite alternate';
+                    p2.style['-moz-animation'] = 'glow1 1s ease-in-out infinite alternate';
+                    p2.style.animation = 'glow1 1s ease-in-out infinite alternate';
                 }
                 gameState();
                 displayWinner();
