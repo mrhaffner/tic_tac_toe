@@ -51,15 +51,20 @@
     </div>
     <div id="player_select_container">
         <div id="select_center">
-            <h1 #id='title'>Retro Future</h1><br>
-            <h1 #id='title'>Tic Tac Toe</h1>
-            <form id="input_form" action="">
-                <label for="player1">Player X</label><br>
-                <input type="text" id="player1" name="player1" autocomplete="off" required value='Snake Plisken'><br>
-                <label for="player2">Player O</label><br>
-                <input type="text" id="player2" name="player2" autocomplete="off" required value='Rick Deckard'><br>
-                <input type="button" id="submit" value="Start Game">
-            </form>
+            <h1 class='title'>Retro Future</h1><br>
+            <div id="title2">
+                <h1 class='title'>Tic Tac Toe</h1>
+            </div>
+            <span id="player_select">Player Select</span>
+            <div id="form_div">
+                <form id="input_form" action="">
+                    <span class="player1" for="player1">X</span>
+                    <input type="text" id="player1" name="player1" autocomplete="off" autofocus value='Snake Plisken'>
+                    <span class="player2" for="player2">O</span>
+                    <input type="text" id="player2" name="player2" autocomplete="off" value='Rick Deckard'>  
+                </form>
+            </div>
+            <input type="button" id="submit" value="Start Game">
         </div>
     </div>
     <script src='script.js'></script>

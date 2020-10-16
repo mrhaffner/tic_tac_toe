@@ -33,11 +33,12 @@ Change fonts - perhaps the title will be in one of the more bold - cyberpunk lik
     --grid-color: #33FF00;
     --btn-color: #CC00FF;
     --line-color: #33FF00;
-    --font: commando;
+    --title-color: #33FF00;
+    --font: road_rage;
 }
 
 body {
-    background-image: url('1.jpg');
+    background-image: url('5.jpg');
     background-size: cover;
     font-family: var(--font);
 }
@@ -239,25 +240,102 @@ button {
 }
 
 #player_select_container {
-    /*border-radius: 10px;
-    top: 15%;
-    left: 32%;*/
     position: absolute;
-    background-color:rgba(255, 182, 193, .7);
-    /*height: 700px;
-    width: 700px;*/
-
+    background-image: url('1.jpg');
+    background-size: cover;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
+
 }
 
 #select_center {
     margin: auto;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8%;
+}
+
+.title {
+    margin: 5vh;
+    color: var(--title-color);
+    font-size: 5vh;
+}
+
+#title2 {
     display: flex;
     justify-content: center;
-    margin-top: 22%;
+    align-items: center;
+    margin-bottom: 17.5vh;
+}
+
+#input_form {
+    display: flex;
+    justify-content: center;
+  
+}
+
+#submit {
+    background-color: rgba(255, 0, 0, .0);
+    color: var(--btn-color);
+    border: 1vh solid var(--btn-color);
+    font-size: 3vh;
+    height: 7vh;
+    margin-top: 4vh;
+}
+
+#submit:focus {
+    border-radius: 0;
+    outline: none;
+}
+
+#player1, #player2 {
+    margin: 0 1.5vh;
+    font-size: 2.5vh;
+    font-family: neon;
+}
+
+
+#player1:focus, #player2:focus {
+    border-radius: 0;
+    outline: none; 
+}
+
+.player1 {
+    color: var(--x-color);
+}
+
+.player2 {
+    color: var(--o-color);
+}
+
+.player1, .player2 {
+    font-size: 3vh;
+}
+
+#player1 {
+    color: var(--x-color);
+    border: none;
+    background-color: rgba(255, 0, 0, .0);
+}
+
+#player2 {
+    color: var(--o-color);
+    border: none;
+    background-color: rgba(255, 0, 0, .0);
+}
+
+#player_select {
+    text-align: center;
+    margin-bottom: 3vh;
+    color: var(--btn-color);
+    font-size: 3vh;
+}
+
+#form_div {
+    margin-left: 14vh
 }
 
 /*synthwave styled*/
