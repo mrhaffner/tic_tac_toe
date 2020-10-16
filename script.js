@@ -27,6 +27,7 @@ const displayController = (() => {
         pOneName.textContent = playerOne.getName();
         pTwoName.textContent = playerTwo.getName();
         playerSelectContainer.style.display = "none"
+        document.getElementById('toggle').style.display = 'block'
     })
     
 
@@ -37,6 +38,7 @@ const displayController = (() => {
         pOneName.textContent = "";
         pTwoName.textContent = "";
         document.getElementById('input_form').reset()
+        document.getElementById('toggle').style.display = 'none';
     })
 
     
