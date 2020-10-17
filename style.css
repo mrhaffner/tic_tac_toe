@@ -3,9 +3,12 @@
     --o-color: #FF0099;
     --grid-color: #33FF00;
     --btn-color: #CC00FF;
-    --line-color: #33FF00;
     --title-color: #33FF00;
     --font: road_rage;
+}
+
+#reset, #new_players_button {
+    z-index: 0
 }
 
 #toggle {
@@ -26,6 +29,7 @@ body {
 #container_container {
     display: flex;
     justify-content: center;
+    margin-right: 3vh;
 }
 
 #container {
@@ -41,7 +45,7 @@ body {
     color: var(--btn-color);
     display: flex;
     justify-content: center;
-    margin: 4.5vh;
+    margin: 1vh 0vh 2vh 3vh;
     font-size: 3.5vh;
 }
 
@@ -54,13 +58,8 @@ body {
     font-size: 15vh;
 }
 
-#button_container_container {
-    display: flex;
-    justify-content: center;
-}
-
 #player1_name, #player2_name, button {
-    font-family: commando;
+    font-family: neon;
 }
 
 
@@ -72,19 +71,22 @@ body {
 #player1_name {
     position: fixed;
     top: 2%;
-    right: 40%;
+    right: 43%;
     color: var(--x-color);
     -webkit-animation: glow 1s ease-in-out infinite alternate;
     -moz-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;
+    -webkit-text-stroke: .1vh var(--x-color);
+    -webkit-text-fill-color: rgba(0,0,0,0);
+    font-size: 5vh;
 }
 
 @-webkit-keyframes glow {
 from {
-    text-shadow: 0 0 10px var(--x-color), 0 0 20px var(--x-color), 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    text-shadow: 0 0 10px var(--x-color), 0 0 20px var(--x-color), 0 0 30px #FD1C03, 0 0 40px #FD1C03, 0 0 50px #FD1C03, 0 0 60px #FD1C03, 0 0 70px #FD1C03;
     }
     to {
-    text-shadow: 0 0 20px var(--x-color), 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    text-shadow: 0 0 20px var(--x-color), 0 0 30px #FF6600, 0 0 40px #FF6600, 0 0 50px #FF6600, 0 0 60px #FF6600, 0 0 70px#FF6600, 0 0 80px #FF6600;
     }
 }
 
@@ -97,12 +99,23 @@ from {
         }
     }
 
+@-webkit-keyframes glow2 {
+    from {
+        text-shadow: 0 0 10px var(--grid-color), 0 0 20px var(--grid-color), 0 0 30px#33FF00, 0 0 40px #33FF00, 0 0 50px #33FF00, 0 0 60px #33FF00, 0 0 70px #33FF00;
+        }
+        to {
+        text-shadow: 0 0 20px var(--grid-color), 0 0 30px #00FF00, 0 0 40px #00FF00, 0 0 50px #00FF00, 0 0 60px #00FF00, 0 0 70px #00FF00, 0 0 80px #00FF00;
+        }
+    }
+
 #player2_name {
     position: fixed;
     top: 2%;
     right: -33%;
     color: var(--o-color);
-
+    -webkit-text-stroke: .1vh var(--o-color);
+    -webkit-text-fill-color: rgba(0,0,0,0);
+    font-size: 5vh;
 }
 
 .square {
@@ -149,24 +162,33 @@ from {
 
 #button_container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin: 1.5vh 60vh 1.5vh 70vh
 }
 
 #button_container button {
-    border: .6vh solid var(--grid-color);
-    border-radius: 0;
+    border: .1vh solid var(--grid-color);
+    border-radius: 1vh;
     height: 6vh;
-    width: 16vh;
-    background-color: var(--btn-color);
+    background-color: rgba(0,0,0,0);
     font-size: 2.4vh;
     color: var(--grid-color);
-    margin: 7vh 10vh 0 10vh;
+    -webkit-text-stroke: .1vh var(--grid-color);
+    -webkit-text-fill-color: rgba(0,0,0,0);
+    font-size: 4vh;
 }
 
 #button_container button:focus {
-    border-radius: 0;
     outline: none;
+    border-radius: 1vh;
+    border-color: #E6FB04;
+}
+
+#button_container button:hover {
+    -webkit-animation: glow2 1s ease-in-out infinite alternate;
+    -moz-animation: glow2 1s ease-in-out infinite alternate;
+    animation: glow2 1s ease-in-out infinite alternate;
 }
 
 #player_select_container {
@@ -214,15 +236,27 @@ from {
 #submit {
     background-color: rgba(255, 0, 0, .0);
     color: var(--btn-color);
-    border: 1vh solid var(--btn-color);
+    border: .1vh solid var(--btn-color);
+    border-radius: 1vh;
     font-size: 3vh;
     height: 7vh;
     margin-top: 4vh;
+    font-family: 'neon';
+    -webkit-text-stroke: .1vh var(--btn-color);
+    -webkit-text-fill-color: rgba(0,0,0,0);
+    font-size: 5vh;
 }
 
+#submit:hover {
+    -webkit-animation: glow1 1s ease-in-out infinite alternate;
+    -moz-animation: glow1 1s ease-in-out infinite alternate;
+    animation: glow1 1s ease-in-out infinite alternate;
+ } 
+
 #submit:focus {
-    border-radius: 0;
     outline: none;
+    border-radius: 1vh;
+    border-color: #ff4da6;
 }
 
 #player1, #player2 {
@@ -230,7 +264,6 @@ from {
     font-size: 2.5vh;
     font-family: neon;
 }
-
 
 #player1:focus, #player2:focus {
     border-radius: 0;
