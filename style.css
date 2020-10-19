@@ -11,6 +11,10 @@
     z-index: 0
 }
 
+button {
+    cursor: pointer;
+}
+
 #toggle {
     display: none;
     position: absolute;
@@ -127,6 +131,7 @@ from {
     height: 21vh;
     width: 21vh;
     font-family: Varela;
+    cursor: pointer;
 }
 
 #square1 {
@@ -247,6 +252,7 @@ from {
     -webkit-text-stroke: .1vh var(--btn-color);
     -webkit-text-fill-color: rgba(0,0,0,0);
     font-size: 5vh;
+    cursor: pointer;
 }
 
 #submit:hover {
